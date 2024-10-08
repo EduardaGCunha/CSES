@@ -1,28 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int MAXN = 1000;
+const int MAXN = 1e3;
 
-char mat[MAXN][MAXN];
+int grid[MAXN][MAXN];
+int visited[MAXN][MAXN];
 
-int endx, endy;
-void dfs(){
+int n, m;
+int d1[] = {0, 1, 0, -1};
+int d2[] = {1, 0, -1, 0};
+bool path = false;
 
+void dfs(int x, int y){
+    visited[x][y] = 1;
+    for(int i = 0; i < 4; i++){
+        int nx = x+d1[i];
+        int ny = y+d2[i];
+        if(nx < 0 || nx > n) continue;
+        if(ny < 0 || ny > m) continue;
+        dfs()
+    }
 }
 
 int main(){
-    int n, m; cin >> n >> m;
+    cin >> n >> m;
     for(int i = 0; i < n; i++){
         for(int j = 0; j < m; j++){
-            cin >> mat[i][j];
-            if(mat[i][j] == 'B') endx = i, endy= j;
 
         }
     }
-
-    // for(int i = 0; i < n; i++){
-    //     for(int j = 0; j < n; j++){
-
-    //     }
-    // }
 }
