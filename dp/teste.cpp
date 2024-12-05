@@ -16,6 +16,7 @@ signed main(){
             dp[j] = min(dp[j], dp[j-c[i]]+1);
         }
     }
+    
     if(dp[k] == INT_MAX) cout << -1 << endl;
     else cout << dp[k] << endl;
 }
