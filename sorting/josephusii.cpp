@@ -2,19 +2,21 @@
 using namespace std;
 
 
-int main(){
-    int n; cin >> n;
+#define int long long
+signed main(){
+    int n, k; cin >> n >> k;
 
     queue<int> q;
     for(int i = 1; i <= n; i++) q.push(i);
 
-    int flag = 0;
+    k++;
+    int cnt = 1;
     while(!q.empty()){
         auto u = q.front(); q.pop();
-        if(flag){
+        if(!cnt){
             cout << u << " ";
         }else q.push(u);
-        flag = !flag;
+        cnt = (cnt+1)%k;
     }
     cout << endl;
 
